@@ -5,13 +5,13 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "provedor")
-public class Provedor {
+@Table(name = "proveedor")
+public class Proveedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_provedor")
-    private Integer idProvedor;
+    @Column(name = "id_proveedor")
+    private Integer idProveedor;
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
@@ -30,5 +30,4 @@ public class Provedor {
 
     @Column(name = "state")
     private String state;
-
 }
