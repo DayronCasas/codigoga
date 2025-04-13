@@ -5,5 +5,6 @@ CREATE TABLE provedor (
     gmail VARCHAR(100) NOT NULL,
     direccion VARCHAR(150) NOT NULL,
     compras_id_compra INT NOT NULL,
+    state CHAR(1) NOT NULL,
     CONSTRAINT provedor_pk PRIMARY KEY (id_provedor)
 );

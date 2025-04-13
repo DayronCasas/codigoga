@@ -28,4 +28,7 @@ public class Provedor {
     @Column(name = "compras_id_compra", nullable = false)
     private Integer comprasIdCompra;
 
+    @Column(name = "state")
+    private String state;
+
 }
