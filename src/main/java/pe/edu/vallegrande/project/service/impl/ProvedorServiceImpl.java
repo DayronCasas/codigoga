@@ -48,9 +48,16 @@ public class ProvedorServiceImpl implements ProvedorService {
     }
 
     @Override
-    public void delete(Provedor provedor) {
-        log.info("Marcando provedor como inactivo: {}", provedor);
-        provedor.setState("I");
-        provedorRepository.save(provedor);
+    public void deleteById(Integer id) {
+        log.info("Marcando provedor como inactivo con ID: {}", id);
+        Optional<Provedor> optionalProvedor = provedorRepository.findById(id);
+        if (optionalProvedor.isPresent()) {
+            Provedor provedor = optionalProvedor.get();
+            provedor.setState("I");
+            provedorRepository.save(provedor);
+        } else {
+            log.warn("No se encontró el provedor con ID: {}", id);
+        }
     }
+    
 }
